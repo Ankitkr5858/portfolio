@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"> -->
+
+  <title>Ankit – Frontend developer</title>
+
+</head>
+
+<body>
+
+  <style>
+    .preloader {
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+    }
+
+    .preloader-container {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: 99999;
+    }
+
+    .preloader-container .second {
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      transition: 0.5s cubic-bezier(1, 0.42, 1, 1);
+      transition-delay: 0.5s;
+    }
+
+    .preloader-container .second .smile-icons {
+      transition: 0.5s linear;
+    }
+
+    .preloader-container .first {
+      background: #fff;
+      transition: 0.5s cubic-bezier(0, 0, 0.2, 0.99);
+      transition-delay: 1.2s;
+    }
+
+    .preloader-container.hidden .preloader {
+      bottom: 100vh;
+    }
+
+    .preloader-container.hidden .smile-icons {
+      opacity: 0;
+    }
+  </style>
+
+  <div id="cursors">
+    <div class="cursor"></div>
+    <div class="cursor"></div>
+  </div>
+
+  <div class="preloader-container" id="preload">
+    <div class="preloader first"></div>
+    <div class="preloader second">
+      <div class="smile-icons"></div>
+    </div>
+  </div>
+
+  <div id="main">
+    <div id="main_bg" class="container"></div>
+
+
+    <div class="mobile-scroll-button">
+      <div class="scroll-down cursor-item">
+        <span class="scroll-icon cursor-item"></span>
+      </div>
+    </div>
+
+    <header class="header">
+      <nav class="container main-navigation">
+        <a href="#" class="main-navigation-item cursor-item active" id="intro" data-anchor="section_1">Intro</a>
+        <a href="#" class="main-navigation-item cursor-item" id="works" data-anchor="section_3">Works</a>
+        <a href="#" class="main-navigation-item cursor-item" id="about" data-anchor="section_4">About</a>
+        <a href="#" class="main-navigation-item cursor-item" id="contacts" data-anchor="last_title">Contacts</a>
+      </nav>
+      <div class="hamburger">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </div>
+    </header>
+
+    <div class="mobile-menu">
+      <div class="close-menu">
+        <span class="close-line"></span>
+        <span class="close-line"></span>
+      </div>
+      <nav class="container main-navigation">
+        <a href="#" class="main-navigation-item cursor-item active" id="intro" data-anchor="section_1">Intro</a>
+        <a href="#" class="main-navigation-item cursor-item" id="works" data-anchor="mobile">Works</a>
+        <a href="#" class="main-navigation-item cursor-item" id="about" data-anchor="section_4">About</a>
+        <a href="#" class="main-navigation-item cursor-item" id="contacts" data-anchor="last_title">Contacts</a>
+      </nav>
+      <div>
+        <ul class="mobile-social-list">
+          <li class="mobile-social-item">
+            <a target="_blank" href="https://www.linkedin.com/in/ankit-kumar-377025b1/" class="mobile-social-link"></a>
+          </li>
+          <li class="mobile-social-item">
+            <a target="_blank" href="https://www.instagram.com/hustlerstiffy/" class="mobile-social-link"></a>
+          </li>
+          <li class="mobile-social-item">
+            <a target="_blank" href="https://github.com/ankitkr5858" class="mobile-social-link"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <section class="section container scrollify" id="section_1">
+      <div id="fixed_titles">
+        <div id="titles">
+          <h2 class="section-title title-white">Hi, I am</h2>
+          <h2 class="section-title title-gray reload" id="home">Ankit</h2>
+          <div id="circle" class="state-1 reload"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section scrollify" id="section_2" data-section-name="section_intro">
+      <div style="visibility: hidden; width: 0; height: 0;">
+        <img id="icon_1" src="./assets/img/emoji/icon_1.png" alt="Smile">
+        <img id="icon_2" src="./assets/img/emoji/icon_2.png" alt="Smile">
+        <img id="icon_3" src="./assets/img/emoji/icon_3.png" alt="Smile">
+        <img id="icon_4" src="./assets/img/emoji/icon_4.png" alt="Smile">
+        <img id="icon_5" src="./assets/img/emoji/icon_5.png" alt="Smile">
+        <img id="icon_6" src="./assets/img/emoji/icon_6.png" alt="Smile">
+      </div>
+      <div id="raphael">
+
+      </div>
+      <div class="title-bg" id="title_bg">
+        <div class="mobile-gif-wrapper">
+          <img src="./assets/img/gifs/bg/glitch-intro-option2.gif" alt="Frontend developer">
+        </div>
+      </div>
+      <div class="container">
+        <div class="fixed-bg">
+          <div class="bg-line" id="bg_1"></div>
+        </div>
+
+        <div class="animated-title">
+          <h2 class="bold-title" id="bold_title_1"><span id="title_1">Frontend</span> <span id="wrapper_1"></span></h2>
+          </br>
+          <h2 class="bold-title" id="bold_title_2"><span>developer</span> <span id="wrapper_2"></span></h2>
+        </div>
+      </div>
+      <div class="long-continer">
+        <div class="horn-wrapper cursor-item">
+          <div class="horn hidden cursor-item" id="horn"></div>
+        </div>
+      </div>
+    </section>
+    <div class="mobile-portfolio" id="mobile">
+      <div class="gif-wrapper">
+        <img src="./assets/img/gifs/bg/glitch-works.gif" alt="Works">
+        <div class="gif-line"></div>
+      </div>
+      <ul class="mobile-portfolio-list">
+        <li class="mobile-portfolio-item">
+          <div class="title">
+            <p class="projects-list-name">Wittwiki</p>
+            <a target="_blank" href="http://wittwiki.com/" class="see-case">See case <i class="arrow-link-icon"></i></a>
+          </div>
+        </li>
+        <li class="mobile-portfolio-item">
+          <div class="title">
+            <p class="projects-list-name">Instadriver</p>
+            <a target="_blank" href="https://instadriver-react.herokuapp.com" class="see-case">See case <i
+                class="arrow-link-icon"></i></a>
+          </div>
+        </li>
+        <li class="mobile-portfolio-item">
+          <div class="title">
+            <p class="projects-list-name">AppLand</p>
+            <a target="_blank" href="https://eloquent-borg-e132c7.netlify.app" class="see-case">See case <i
+                class="arrow-link-icon"></i></a>
+          </div>
+        </li>
+        <li class="mobile-portfolio-item">
+          <div class="title">
+            <p class="projects-list-name">Kommunicate</p>
+            <a target="_blank" href="https://blissful-euler-eb5f3b.netlify.app" class="see-case">See case <i
+                class="arrow-link-icon"></i></a>
+          </div>
+        </li>
+        <li class="mobile-portfolio-item">
+          <div class="title">
+            <p class="projects-list-name">Dashboard</p>
+            <a target="_blank" href="https://admiring-noether-70833d.netlify.app/home" class="see-case">See case <i
+                class="arrow-link-icon"></i></a>
+          </div>
+        </li>
+        <li class="mobile-portfolio-item">
+          <div class="title">
+            <p class="projects-list-name">Umbrella</p>
+            <a target="_blank" href="https://hardcore-noyce-a5a099.netlify.app" class="see-case">See case <i
+                class="arrow-link-icon"></i></a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <section class="section portfolio-section scrollify first" id="section_3">
+      <div class="animated-bg">
+        <div class="top-section" id="top_section"></div>
+        <div class="line" id="line"></div>
+        <div class="bottom-section" id="bottom_section"></div>
+      </div>
+      <div class="container works-container" id="works_container">
+        <div id="animated_giff" class="works-giff">
+          <div class="gif-wrapper">
+            <img src="./assets/img/gifs/bg/glitch-works.gif" alt="Works">
+            <div class="gif-line"></div>
+          </div>
+        </div>
+      </div>
+      <div class="projects">
+        <ul class="projects-list blocked" id="projects_list">
+          <li class="projects-list-item">
+            <div class="shadow"></div>
+            <br />
+            <a target="_blank" class="projects-list-name" href="http://wittwiki.com/">
+              Wittwiki
+              <span class="project-link"></span>
+              <span class="glitch-wrapper">
+                <span class="glitch">Wittwiki</span>
+              </span>
+            </a>
+          </li>
+          <li class="projects-list-item">
+            <div class="shadow"></div>
+            <br />
+            <a target="_blank" class="projects-list-name" href="https://instadriver-react.herokuapp.com">Instadriver
+              <span class="project-link"></span>
+              <span class="glitch-wrapper">
+                <span class="glitch">Instadriver</span>
+              </span>
+            </a>
+          </li>
+          <li class="projects-list-item">
+            <div class="shadow"></div>
+            <br />
+            <a target="_blank" class="projects-list-name" href="https://eloquent-borg-e132c7.netlify.app">AppLand
+              <span class="project-link"></span>
+              <span class="glitch-wrapper">
+                <span class="glitch">AppLand</span>
+              </span>
+            </a>
+          </li>
+          <li class="projects-list-item">
+            <div class="shadow"></div>
+            <br />
+            <a target="_blank" class="projects-list-name" href="https://blissful-euler-eb5f3b.netlify.app">Kommunicate
+              <span class="project-link"></span>
+              <span class="glitch-wrapper">
+                <span class="glitch">Kommunicate</span>
+              </span>
+            </a>
+          </li>
+          <li class="projects-list-item">
+            <div class="shadow"></div>
+            <br />
+            <a target="_blank" class="projects-list-name"
+              href="https://admiring-noether-70833d.netlify.app/home">Dashboard
+              <span class="project-link"></span>
+              <span class="glitch-wrapper">
+                <span class="glitch">Dashboard</span>
+              </span>
+            </a>
+          </li>
+          <li class="projects-list-item">
+            <div class="shadow"></div>
+            <br />
+            <a target="_blank" class="projects-list-name" href="https://hardcore-noyce-a5a099.netlify.app">Umbrella
+              <span class="project-link"></span>
+              <span class="glitch-wrapper">
+                <span class="glitch">Umbrella</span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div id="starter"></div>
+    </section>
+
+    <section class="container scrollify" id="section_4">
+      <div class="section-4-bg"></div>
+      <div class="fixed-sidebar">
+        <ul class="social-links">
+          <li class="social-links-item cursor-item">
+            <a href="https://www.linkedin.com/in/ankit-kumar-377025b1/" class="social-links-link cursor-item"
+              target=_blank>
+              <span class="arrow-icon"></span>
+              <span class="link-text cursor-item">
+                Linkedin
+              </span>
+            </a>
+          </li>
+          <li class="social-links-item cursor-item">
+            <a href="https://www.instagram.com/hustlerstiffy/" class="social-links-link cursor-item" target=_blank>
+              <span class="arrow-icon"></span>
+              <span class="link-text cursor-item">
+                Instagram
+              </span>
+            </a>
+          </li>
+          <li class="social-links-item cursor-item">
+            <a href="https://github.com/ankitkr5858" class="social-links-link cursor-item" target=_blank>
+              <span class="arrow-icon"></span>
+              <span class="link-text cursor-item">
+                GitHub
+              </span>
+            </a>
+          </li>
+        </ul>
+        <div class="scroll-down cursor-item">
+          <span class="scroll-icon cursor-item"></span>
+          Scroll
+        </div>
+      </div>
+      <div class="fixed-bg">
+        <div class="bg-line" id="bg_1"></div>
+      </div>
+      <div class="title-bg" id="title_bg_2">
+        <div class="mobile-gif-wrapper">
+          <img src="./assets/img/gifs/bg/glitch-about.gif" alt="Hey world">
+        </div>
+      </div>
+      <div class="animated-title">
+        <h2 class="bold-title" id="bold_title_3"><span id="title_2">Hey</span> <span id="wrapper_3"></span></h2>
+        </br>
+        <h2 class="bold-title" id="bold_title_4"><span>world</span> <span class="hey-icon"></span> <span
+            id="wrapper_4"></span></h2>
+      </div>
+      <div class="description" id="about-starter">
+        <p>My name is Ankit Kumar and I am <span class="text-bold">frontend developer
+          </span> with focus on creative and
+          product digital design solutions, and based in Bangalore, India <span class="icon flag"></span></p>
+        <p>I'm an advocate for detailed execution and proper user experience, as both are equally important when making
+          better products. I'm a type lover, <span class="icon lover"></span> and really fond of minimalist design.</p>
+      </div>
+
+      <div class="quote">
+        <span>
+          Society is familiar with bad design better than good. It's because of this that people prefer bad design to
+          good. They are too accustomed to what they have. Everything new is begins to frighten, and old is comforting
+          for them.
+        </span>
+      </div>
+      <div class="description big-margin">
+        <div class="experience">
+          <h4 class="exp-title" id="trigger_13">2+</h4>
+          <p class="exp-text">years experience</p>
+        </div>
+        <p>I am able to quickly understand the needs and possible approaches of each project <span
+            class="icon smile"></span>, to ensure the best innovative solution.</p>
+        <p>My idea of great product design combines a user centered approach with a strong and appealing visual language
+          <span class="icon hand"></span>.
+        </p>
+      </div>
+      <div class="description small-margin">
+        <div class="experience">
+          <p class="bold-text">
+            Connections & inspirations
+          </p>
+        </div>
+        <p>I look for them everywhere. In architecture, food, furniture, design, geometry, and
+          travel. I find elements that work together — or clash magnificently — and fuse them into a wholly original
+          vision <span class="icon scary"></span>.</p>
+      </div>
+      <div class="description" id="trigger_14">
+        <div class="experience">
+          <p class="bold-text">
+            Goal & <br /> mission
+          </p>
+        </div>
+        <p>My goal <span class="icon target"></span> is to create lasting relationships between my
+          <span class="text-bold">clients </span> and their audience through meaningful experiences.
+        </p>
+        <p>Each mission <span class="icon rocket"></span> is unique and, from startups to major companies, I shape my
+          proposals around each issue. I’m here to help you turn your brief into something
+          <span class="text-bold">brilliant</span>.
+        </p>
+      </div>
+      <div class="title-bg" id="title_bg_3">
+        <div class="mobile-gif-wrapper">
+          <img src="./assets/img/gifs/bg/glitch-contacts.gif" alt="Say hello">
+        </div>
+      </div>
+      <div class="animated-title" id="last_title">
+        <h2 class="bold-title" id="bold_title_5"><span id="title_3">Say</span> <span id="wrapper_5"></span></h2>
+        </br>
+        <h2 class="bold-title" id="bold_title_6"><span>Hello</span> <span class="hand-icon"></span>
+          <span id="wrapper_6"></span>
+        </h2>
+      </div>
+      <div class="description big-text" id="last_title_trigger">
+        <p><span class="text-bold">Let's get in touch</span>, for any project inquiries or even simply say hi, If you
+          are feeling
+          really adventurous, just drop me a <a class="text-bold cursor-item"
+            href="mailto:ankitkr5858@gmail.com">line</a>. </p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container footer-wrap">
+        <div>Designed by Ankit.</div>
+        <div class="contact cursor-item">
+          <a href="mailto:ankitkr5858@gmail.com" class="cursor-item">ankitkr5858@gmail.com</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script type="text/javascript" src="./assets/index.js"></script>
+</body>
+
+</html>

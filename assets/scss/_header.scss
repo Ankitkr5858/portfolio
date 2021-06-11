@@ -1,0 +1,232 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 125px;
+  width: 100%;
+  @include flexy(flex-start, center, row);
+  z-index: 99999;
+
+  &.black {
+    background: #000;
+  }
+
+  &.white {
+    background: #fff;
+  }
+
+  .container {
+    max-width: 90%;
+  }
+}
+
+.hamburger {
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  padding: 5px;
+  box-sizing: border-box;
+  @include flexy(space-around, stretch, column);
+  position: absolute;
+  z-index: 999;
+  top: 25px;
+  right: calc(5% - 5px);
+  @media screen and (max-width: $phone) {
+    top: 35px;
+  }
+  &.black {
+    .hamburger-line {
+      background: #000;
+    }
+  }
+  .hamburger-line {
+    display: inline-block;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+  }
+  @media screen and (min-width: 1025px) {
+    display: none;
+  }
+}
+
+.close-menu {
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  padding: 5px;
+  box-sizing: border-box;
+  @include flexy(center, center, column);
+  position: absolute;
+  z-index: 999;
+  top: 25px;
+  right: 25px;
+  @media screen and (max-width: $phone) {
+    top: 35px;
+  }
+  .close-line {
+    display: inline-block;
+    width: 75%;
+    height: 2px;
+    background: #fff;
+    transform-origin: center center;
+    position: absolute;
+    &:first-child {
+      transform: rotateZ(45deg);
+    }
+    &:last-child {
+      transform: rotateZ(-45deg);
+    }
+  }
+}
+
+.mobile-menu {
+  padding-top: 50px;
+  padding-bottom: 150px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  transition: all 0.5s linear;
+  transform: translateY(-100%);
+  &.open {
+    transform: translateY(0);
+  }
+  .main-navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    .main-navigation-item {
+      font-size: 3em;
+      color: #fff;
+      font-family: "Druk-Wide-Bold";
+      transform: translateX(-100vw);
+      &:nth-child(1) {
+        transition-delay: 0.8s;
+      }
+      &:nth-child(2) {
+        transition-delay: 1s;
+      }
+      &:nth-child(3) {
+        transition-delay: 1.2s;
+      }
+      &:nth-child(4) {
+        transition-delay: 1.4s;
+      }
+      &.open {
+        transform: translateX(0);
+        &.close {
+          transform: translateX(100vw);
+        }
+      }
+
+      @media screen and (max-width: $tablet) {
+        padding: 15px 5px;
+      }
+      &.active {
+        color: #333333;
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.main-navigation {
+  @include flexy(flex-end, center, row);
+  @media screen and (max-width: $tablet) {
+    display: none;
+  }
+  &-item {
+    display: inline-block;
+    text-decoration: none;
+    color: #999999;
+    font-family: Montserrat-SemiBold;
+    font-size: 16px;
+    padding: 30px;
+    position: relative;
+    transition: 0.5s all;
+    &:hover {
+      color: #666;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    &.active {
+      color: #333;
+      pointer-events: none;
+      &:after {
+        content: " ";
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        position: absolute;
+        top: calc(130% - 40px);
+        left: 50%;
+        margin-left: -5px;
+        border-radius: 50%;
+        background: #333;
+      }
+    }
+  }
+}
+
+.mobile-social-list {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  margin-left: 8%;
+  @include flexy(flex-start, center, row);
+
+  .mobile-social-item {
+    margin-right: 35px;
+    transition: all 0.3s;
+    opacity: 0;
+    .mobile-social-link {
+      display: inline-block;
+      background-image: url(./img/icons.png);
+      background-repeat: no-repeat;
+      filter: invert(100%);
+      // zoom: 0.4;
+    }
+
+    &.open {
+      opacity: 1;
+      &.close {
+        opacity: 0;
+      }
+    }
+
+    &:first-child {
+      transition-delay: 0.8s;
+      .mobile-social-link {
+        width: 50px;
+        height: 46px;
+        background-position: -766px -6px;
+      }
+    }
+    &:nth-child(2) {
+      transition-delay: 1s;
+      .mobile-social-link {
+        width: 50px;
+        height: 46px;
+        background-position: -766px -63px;
+      }
+    }
+    &:nth-child(3) {
+      transition-delay: 1.2s;
+      .mobile-social-link {
+        width: 50px;
+        height: 46px;
+        background-position: -766px -120px;
+      }
+    }
+  }
+}

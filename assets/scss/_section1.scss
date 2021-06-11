@@ -1,0 +1,189 @@
+#section_1 {
+  height: 1500px !important;
+  &.container {
+    max-width: 90%;
+  }
+}
+
+#titles {
+  width: 100%;
+  position: relative;
+  &.black {
+    .title-gray {
+      color: #fff;
+    }
+    #circle {
+      background: #fff;
+    }
+  }
+  @media screen and (max-width: $tablet) {
+    .section-title {
+      margin-bottom: 20px;
+      font-size: 5em !important;
+    }
+  }
+  @media screen and (max-width: $phone) {
+    .section-title {
+      font-size: 4.2em !important;
+      margin-bottom: 5px;
+    }
+  }
+  &.loaded {
+    animation: hideTitles 0.5s;
+    animation-fill-mode: forwards;
+    .section-title {
+      font-size: 3em !important;
+      width: 53px;
+      @media screen and (max-width: $phone) {
+        width: 26px;
+      }
+    }
+    #circle {
+      right: -807px !important;
+      bottom: -740px;
+      transform: matrix3d(
+        0.007,
+        0,
+        0,
+        0,
+        0,
+        0.007,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      );
+      @media screen and (max-width: $tablet) {
+        bottom: -720px;
+      }
+      @media screen and (max-width: $phone) {
+        right: -778px !important;
+        bottom: -740px;
+        transform: matrix3d(0.004, 0, 0, 0, 0, 0.004, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1) !important;
+      }
+    }
+  }
+}
+
+#titles.state-1 {
+  width: 83%;
+}
+#titles.state-2 {
+  width: 66%;
+}
+#titles.state-3 {
+  width: 49%;
+}
+#titles.state-4 {
+  width: 32%;
+}
+#titles.state-5 {
+  width: 15%;
+}
+#titles.state-6 {
+  width: 15%;
+}
+
+#fixed_titles.state-4 {
+  top: 19.5vh;
+  height: 256px;
+}
+#fixed_titles.state-5 {
+  top: 10vh;
+  height: 156px;
+}
+#fixed_titles.state-6 {
+  top: 0;
+  height: 86px;
+}
+
+#circle {
+  background: #000;
+  border-radius: 50%;
+  position: absolute;
+  transition: all 0.2s linear;
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  opacity: 1;
+  bottom: -735px;
+  right: -635px;
+  width: 1500px;
+  height: 1500px;
+  @media screen and (max-width: $tablet) {
+    bottom: -714px;
+    right: -660px !important;
+  }
+  @media screen and (max-width: $phone) {
+    bottom: -738px;
+    right: -718px !important;
+    
+    &.state-14 {
+      transform: matrix3d(
+      0.008,
+      0,
+      0,
+      0,
+      0,
+      0.008,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+    ) !important;
+    }
+  }
+}
+
+#circle.state-1 {
+  transform: matrix3d(2.5, 0, 0, 0, 0, 2.5, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+}
+#circle.state-2 {
+  transform: matrix3d(1.5, 0, 0, 0, 0, 1.5, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+}
+#circle.state-3 {
+  transform: matrix3d(1.3, 0, 0, 0, 0, 1.3, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+}
+#circle.state-4 {
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+}
+#circle.state-5 {
+  transform: matrix3d(0.9, 0, 0, 0, 0, 0.9, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+}
+#circle.state-6 {
+  transform: matrix3d(0.8, 0, 0, 0, 0, 0.8, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+}
+#circle.state-7 {
+  transform: matrix3d(0.7, 0, 0, 0, 0, 0.7, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+}
+#circle.state-8 {
+  transform: matrix3d(0.6, 0, 0, 0, 0, 0.6, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+}
+#circle.state-9 {
+  transform: matrix3d(0.5, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+}
+#circle.state-10 {
+  transform: matrix3d(0.4, 0, 0, 0, 0, 0.4, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+}
+#circle.state-11 {
+  transform: matrix3d(0.3, 0, 0, 0, 0, 0.3, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+}
+#circle.state-12 {
+  transform: matrix3d(0.2, 0, 0, 0, 0, 0.2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+}
+#circle.state-13 {
+  transform: matrix3d(0.1, 0, 0, 0, 0, 0.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+}
+#circle.state-14 {
+  transform: matrix3d(0.014, 0, 0, 0, 0, 0.014, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+}
